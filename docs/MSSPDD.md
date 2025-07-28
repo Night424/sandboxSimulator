@@ -58,19 +58,19 @@ Logging	Plaintext + console
 Optional	
 ________________________________________
 Milestones
-Milestone	Deadline
-Project Planning & Roles	[Today]
-Setup Folder Structure & GitHub Repo	[Soon]
-Finish Simulated Malware Logic	[Date]
-Build Monitoring Script	[Date]
-Create GUI and Hook Up Logs	[Date]
+Milestone	                                Deadline
+Project Planning & Roles	                [23/07/2025]
+Setup Folder Structure & GitHub Repo	    [Date]
+Finish Simulated Malware Logic	            [Date]
+Build Monitoring Script	                    [Date]
+Create GUI and Hook Up Logs	                [Date]
 Testing: Log detection, simulate infection	[Date]
-Final Packaging (e.g., Windows .exe)	[Optional]
+Final Packaging (e.g., Windows .exe)	    [Optional]
+End date                                    [17/09/2025]
 ________________________________________
- 
  
 README Highlights (for GitHub)
-# Malware Sandbox Simulator 🐛
+# Malware Sandbox Simulator 
 This is a safe and educational tool that simulates malware behavior and detects it in a sandboxed environment.
 > For educational use only. No real malware is used or executed.
 
