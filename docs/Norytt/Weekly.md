@@ -11,7 +11,7 @@ Tasks Description
 
 
 Deadlines
-Sunday
+Sunday (2025/08/03)
 
 Status
 Doing sum researce
