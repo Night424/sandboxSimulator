@@ -25,8 +25,8 @@ Deadlines
 4. Sun
 
 Status
-1. Not Started
-2. Not Started
+1. Done
+2. Started
 3. Not Started
 4. Not Started
 

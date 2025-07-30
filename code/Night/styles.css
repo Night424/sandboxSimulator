@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: #121212;
+  color: #00ff00;
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 220px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #2e2e2e;
+  color: #00ff00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+#mainPanel {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #121212;
+}
+
+#logOutput {
+  background-color: #000;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+}
