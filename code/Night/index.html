@@ -7,10 +7,18 @@
 </head>
 <body>
   <div id="sidebar">
-    <button id="launchSim">Launch Simulated Malware</button>
+    <label for="scriptSelect">Choose a fake malware script:</label>
+    <select id="scriptSelect">
+      
+    </select>
+    <button id="runScriptBtn">Run Selected Script</button>
+    
+    <hr/>
+
     <button id="viewLogs">View Logs</button>
     <button id="openFolder">Open Quarantine Folder</button>
   </div>
+
   <div id="mainPanel">
     <h2>Malware Sandbox</h2>
     <pre id="logOutput">Logs will appear here...</pre>

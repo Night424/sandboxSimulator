@@ -1,11 +1,26 @@
-document.getElementById("launchSim").addEventListener("click", () => {
-    alert("Launching simulation...");
+const { ipcRenderer } = require('electron');
+
+window.addEventListener('DOMContentLoaded', async () => {
+  const select = document.getElementById('scriptSelect');
+  const scripts = await ipcRenderer.invoke('get-script-list');
+
+  scripts.forEach(script => {
+    const option = document.createElement('option');
+    option.value = script;
+    option.textContent = script;
+    select.appendChild(option);
+  });
 });
 
-document.getElementById("viewLogs").addEventListener("click", () => {
-    alert("Log viewer..");
+document.getElementById('runScriptBtn').addEventListener('click', () => {
+  const selectedScript = document.getElementById('scriptSelect').value;
+  ipcRenderer.send('run-python-script', selectedScript);
 });
 
-document.getElementById("openFolder").addEventListener("click", () => {
-    alert("Opening folder...");
+document.getElementById('viewLogs').addEventListener('click', () => {
+  alert('View Logs coming soon!');
+});
+
+document.getElementById('openFolder').addEventListener('click', () => {
+  alert('Open Folder coming soon!');
 });
