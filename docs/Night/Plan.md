@@ -14,26 +14,24 @@ Add sidebar with placeholder buttons:
 Implement basic dark CSS with terminal-style aesthetics(e.g. green on black or white on black)
 
 ## Phase 2: Core Features
-Connect sidebar buttons to backend logic
+Connect sidebar buttons to logic
  Launch Sim: call a fakevirus.py or shell command
  View Logs: read and display live-updated log file
  Open Folder: use shell.openPath() to open a specific directory
 
 Set up IPC between renderer and main for executing malware sim securely
 
-Display status or logs in main panel (<pre> or scrollable text area)
+Display status or logs in main panel (pre or scrollable text area)
 
 ## Phase 3: Real-time Log Viewer
 Use Node.js fs.watch() or polling to detect log changes
 Auto-update log panel with new lines (tail-like view)
-Add toggle to pause/resume auto-refresh
 Style the log viewer (scroll, word-wrap, monospace font)
 
 ## Phase 4: Polish and Extras
 Improve CSS with animations (glow, fade-in text)
 Add simple error/success alerts (e.g. for failed launch)
 Create basic app icon (terminal/skull/purple theme)
-Optionally: Add a “Theme” toggle or titlebar customization (frameless, draggable)
 
 ## Deliverables
 main.js – Electron setup and app entry
