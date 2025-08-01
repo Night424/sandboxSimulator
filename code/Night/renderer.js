@@ -1,5 +1,7 @@
 const { ipcRenderer } = require('electron');
 
+const logOutput = document.getElementById('logOutput');
+
 window.addEventListener('DOMContentLoaded', async () => {
   const select = document.getElementById('scriptSelect');
   const scripts = await ipcRenderer.invoke('get-script-list');
@@ -12,7 +14,17 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+function appendLog(message) {
+  logOutput.textContent += message + '\n';
+  logOutput.scrollTop = logOutput.scrollHeight;
+}
+
+ipcRenderer.on('log-line', (event, data) => {
+  appendLog(data);
+});
+
 document.getElementById('runScriptBtn').addEventListener('click', () => {
+  logOutput.textContent = ''; // Clear previous logs
   const selectedScript = document.getElementById('scriptSelect').value;
   ipcRenderer.send('run-python-script', selectedScript);
 });

@@ -1,8 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const { ipcMain } = require('electron');
-const { exec } = require('child_process');
 const fs = require('fs');
+const { spawn } = require('child_process');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -20,17 +20,18 @@ function createWindow() {
 // Listen for script run request
 ipcMain.on('run-python-script', (event, scriptName) => {
   const scriptPath = path.join(__dirname, 'fake-malware', scriptName);
+  const pyProcess = spawn('python', [scriptPath]);
 
-  exec(`python "${scriptPath}"`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`❌ Error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`⚠️ Stderr: ${stderr}`);
-      return;
-    }
-    console.log(`📄 Output:\n${stdout}`);
+  pyProcess.stdout.on('data', data => {
+    event.sender.send('log-line', data.toString());
+  });
+
+  pyProcess.stderr.on('data', data => {
+    event.sender.send('log-line', '[stderr] ' + data.toString());
+  });
+
+  pyProcess.on('close', code => {
+    event.sender.send('log-line', `Process exited with code ${code}`);
   });
 });
 
