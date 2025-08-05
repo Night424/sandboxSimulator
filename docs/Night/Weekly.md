@@ -34,3 +34,34 @@ Status
 
 Notes
 1. Dropdown detects .py and .js scripts
+
+---
+
+# Week [2]: [04/08/2025] – [10/08/2025]
+
+## Weekly Goal  
+Finish GUI and use other code in GUI
+
+## Task Checklist
+Tasks
+1. Merge GUI branch with dev or main
+2. Use other code in app for testing
+
+Tasks Description
+1. Merge GUI branch and let others test it
+2. Use the monitoring scipts and FV scripts in app
+
+
+Deadlines
+1. Wed 
+2. Thurs 
+3. Fri 
+4. Sun
+
+Status
+1. 
+2. 
+
+
+Notes
+1.
