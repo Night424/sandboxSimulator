@@ -29,10 +29,23 @@ document.getElementById('runScriptBtn').addEventListener('click', () => {
   ipcRenderer.send('run-python-script', selectedScript);
 });
 
-document.getElementById('viewLogs').addEventListener('click', () => {
-  alert('View Logs coming soon!');
+document.getElementById('viewLogs').addEventListener('click', async () => {
+  const logs = await ipcRenderer.invoke('view-logs');
+  if (logs.length === 0) {
+    appendLog('No logs found.');
+    return;
+  }
+  
+  logOutput.textContent = 'Available logs:\n\n';
+  logs.forEach(log => {
+    appendLog(`${log.name}`);
+  });
 });
 
-document.getElementById('openFolder').addEventListener('click', () => {
-  alert('Open Folder coming soon!');
+document.getElementById('openFolder').addEventListener('click', async () => {
+  await ipcRenderer.invoke('open-logs-folder');
+});
+
+ipcRenderer.on('log-saved', (event, logPath) => {
+  appendLog(`\nLog file saved: ${logPath}`);
 });
